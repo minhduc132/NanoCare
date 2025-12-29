@@ -136,7 +136,7 @@ const Team = () => {
                 </div>
                 
                 {/* Line vàng từ dưới card giữa xuống Certificates */}
-                <div className="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 h-[100px] w-[2px] bg-[rgb(225,162,0)]"></div>
+                <div className="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
             </div>
         </section>
     );

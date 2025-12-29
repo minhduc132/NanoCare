@@ -49,7 +49,7 @@ const AdditionalServices = () => {
                 </div>
 
                 {/* Vertical Separator - đường vàng kết nối xuống Team */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[100px] w-[2px] bg-[rgb(225,162,0)]"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
             </div>
         </section>
     );

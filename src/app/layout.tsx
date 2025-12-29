@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="vi">
-            <body className={`${nanocareFont.variable} bg-[#FAFAFA] text-base`}>
+            <body className={`${nanocareFont.variable} bg-white text-base`}>
                 {children}
             </body>
         </html>

@@ -14,14 +14,14 @@ const Partner = () => {
             ></div>
             
             {/* Overlay gradient - đậm ở dưới, mờ dần lên trên */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white z-[1]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white z-[1]"></div>
 
             <div className="relative z-10 mx-auto max-w-[100%] ">
                 {/* Section 1: Become our Partner */}
                 <div className=" pb-20">
                     {/* Title với vertical line */}
                     <div className="relative flex flex-col items-center mb-8">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-[120px] w-[2px] bg-[rgb(225,162,0)]"></div>
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
                         <h1 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-[28px] text-center leading-[1.6] mt-[150px]">
                             <span className="text-[rgb(34,34,34)]">Become our</span>{' '}
                             <span className="text-[rgb(225,162,0)]">Partner</span>
@@ -98,7 +98,7 @@ const Partner = () => {
 
                 {/* Section 3: Product Display */}
                 <div className="pt-12 pb-8">
-                    <div className="w-full h-[900px] bg-cover bg-center" style={{ backgroundImage: 'url(/images/product.png)' }}></div>
+                    <div className="w-full h-[700px] bg-cover" style={{ backgroundImage: 'url(/images/product.png)', backgroundPosition: 'center 80%' }}></div>
                 </div>
             </div>
         </section>

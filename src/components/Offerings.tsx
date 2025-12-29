@@ -1,86 +1,34 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 const Offerings = () => {
-    const [contentOpacity, setContentOpacity] = useState(0);
-    const [revealProgress, setRevealProgress] = useState(0);
-    const sectionRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (sectionRef.current) {
-                const rect = sectionRef.current.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                const sectionTop = rect.top;
-                const sectionHeight = rect.height;
-                
-                // Tính toán opacity cho content
-                let opacity = 0;
-                if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
-                    const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight * 0.6)));
-                    opacity = progress;
-                }
-                
-                // Tính toán reveal progress - overlay chạy từ trên xuống
-                // Khi section vào viewport, reveal từ 0 (ẩn) đến 1 (hiện hết)
-                let reveal = 0;
-                if (sectionTop < windowHeight) {
-                    // Tính progress dựa trên vị trí scroll
-                    // Khi sectionTop < 0 (đã scroll qua đầu section), reveal tăng dần
-                    if (sectionTop <= 0) {
-                        // Section đã scroll qua, tính reveal dựa trên phần còn lại
-                        const scrollProgress = Math.min(1, Math.abs(sectionTop) / sectionHeight);
-                        reveal = scrollProgress;
-                    } else {
-                        // Section đang ở trên viewport, reveal = 0
-                        reveal = 0;
-                    }
-                }
-                
-                setContentOpacity(opacity);
-                setRevealProgress(reveal);
-            }
-        };
-
-        handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
-        <section ref={sectionRef} className="relative min-h-[400px] overflow-hidden">
-            {/* Background fixed - nằm im khi scroll */}
+        <section className="relative min-h-[400px] overflow-hidden mt-[10px]">
+            {/* Background fixed - nằm im khi scroll */     }
             <div 
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ 
                     backgroundImage: 'url(/images/sessction3.png)',
                     backgroundAttachment: 'fixed',
-                    backgroundPosition: 'center',
-                    filter: 'blur(8px)',
-                    transform: 'scale(1.1)',
-                    willChange: 'transform'
+                    backgroundPosition: 'center'
+                }}
+            ></div>
+             
+            {/* Gradient overlay - bottom hơi mờ, top mờ mạnh */}
+            <div 
+                className="absolute inset-0 z-[1] py-16"
+                style={{
+                    // 0–30%: hơi mờ, 30–60%: chuyển dần, 60–100%: rất mờ
+                    background: 'linear-gradient(to top, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.95) 100%)'
                 }}
             ></div>
             
-            {/* Gradient overlay - mờ từ trên xuống (giống Partner) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/80 z-[1]"></div>
             
-            {/* Reveal overlay - chạy từ trên xuống khi scroll */}
+            {/* Content (tạm tắt hiệu ứng scroll/fade) */}
             <div 
-                className="absolute inset-0 bg-white transition-all duration-300 z-[2]"
-                style={{ 
-                    clipPath: `inset(${revealProgress * 100}% 0 0 0)`,
-                    WebkitClipPath: `inset(${revealProgress * 100}% 0 0 0)`
-                }}
-            ></div>
-            {/* Content với fade in effect */}
-            <div 
-                className="relative z-10 mx-auto max-w-[1200px] px-4 py-16 transition-opacity duration-500"
-                style={{ 
-                    opacity: contentOpacity,
-                    transform: 'translateZ(0)'
-                }}
+                className="relative z-10 mx-auto max-w-[1200px] px-4 py-16"
             >
                 {/* Box 12 */}
                 <div className="absolute inset-0"></div>

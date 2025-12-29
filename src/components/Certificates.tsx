@@ -4,14 +4,14 @@ const Certificates = () => {
     return (
         <section className="relative min-h-[550px] bg-white">
             {/* Banner mờ ở trên cùng */}
-            <div className="absolute top-0 left-0 right-0 h-[80px] bg-[rgba(200,180,150,0.3)] blur-sm"></div>
+            {/* <div className="absolute top-0 left-0 right-0 h-[80px] bg-[rgba(200,180,150,0.3)] blur-sm"></div> */}
             
             <div className="relative mx-auto max-w-[1200px] px-4 py-16">
                 {/* Line 3 - đường vàng từ banner xuống */}
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-[100px] w-[2px] bg-[rgb(225,162,0)]"></div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
 
                 {/* Headline 21 */}
-                <h1 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-[120px]">
+                <h1 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-[60px]">
                     Certificates<br />
                 </h1>
 
