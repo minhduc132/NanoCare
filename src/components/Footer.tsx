@@ -1,24 +1,28 @@
+'use client';
+
 import React from 'react';
+import { useT } from '../i18n/I18nProvider';
 
 const Footer = () => {
+    const t = useT();
     return (
         <footer className="relative bg-white">
-            <div className="mx-auto max-w-[1200px] px-4 py-6">
-                <div className="flex justify-between items-center mb-4 font-[TWFucmwZSFeHRyYUxpZhLnRZg]">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-4 font-[TWFucmwZSFeHRyYUxpZhLnRZg]">
                     {/* Disclaimer - Left */}
-                    <p className="text-[16px] text-black text-left">
-                        This website is for informational purposes only. We do not provide online ordering services
+                    <p className="text-sm sm:text-base text-black text-left flex-1">
+                        {t('footer.disclaimer')}
                     </p>
 
                     {/* Copyright - Right */}
-                    <div className="flex items-center gap-2">
-                    <div className="w-[20px] h-[20px]">
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                        <div className="w-5 h-5 sm:w-[20px] sm:h-[20px]">
                             <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" preserveAspectRatio="none" fill="rgba(34, 34, 34, 1)">
                                 <path d="M393-320h173q14 0 20.5-9.5T593-353v-73h-60v46H426v-200h107v47h60v-73q0-14-6.5-24T566-640H393q-14 0-20.5 10t-6.5 24v253q0 14 6.5 23.5T393-320Zm87 240q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"></path>
                             </svg>
                         </div>
-                        <p className="text-[16px] text-black text-right">
-                            Copyright StrongBody, 2023
+                        <p className="text-sm sm:text-base text-black text-right">
+                            {t('footer.copyright')}
                         </p>
                     </div>
                 </div>

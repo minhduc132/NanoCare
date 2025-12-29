@@ -1,0 +1,17 @@
+{
+  "name": "Nanocare - Nasal Care Products",
+  "short_name": "Nanocare",
+  "description": "World's #1 Nasal Irrigation Device Manufacturer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e1a200",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
+
