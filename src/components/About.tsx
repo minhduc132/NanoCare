@@ -9,7 +9,7 @@ const About = () => {
         <section className="relative bg-white overflow-hidden">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative max-w-7xl">
                 {/* Line 2 */}
-                <div className="hidden md:block absolute top-[320px] left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)] z-10"></div>
+                <div className="hidden md:block absolute top-[280px] left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)] z-10"></div>
 
                 {/* Headline 6 */}
                 <h1 className="relative z-10 font-bold text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mb-4 sm:mb-6 px-4">

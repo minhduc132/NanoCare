@@ -10,7 +10,7 @@ const messagesMap: Record<string, Record<string, string>> = {
 
 const metadataMap: Record<string, Metadata> = {
     en: {
-        title: "Nanocare - World's #1 Nasal Irrigation Device Manufacturer",
+        title: "Nanocare",
         description: "Nanocare focuses on producing a wide range of products that clean nasal passages, providing you with a sensation of unrestricted breathing. Leading manufacturer of nasal rinse kits, saline solutions, and nasal care products.",
         keywords: ["nasal irrigation", "nasal rinse kit", "nasal care", "saline solution", "nasal health", "respiratory care", "nasal cleansing"],
         openGraph: {
@@ -27,7 +27,7 @@ const metadataMap: Record<string, Metadata> = {
         },
     },
     vi: {
-        title: "Nanocare - Nhà sản xuất thiết bị rửa mũi số 1 thế giới",
+        title: "Nanocare ",
         description: "Nanocare tập trung sản xuất đa dạng sản phẩm giúp làm sạch khoang mũi, mang lại cho bạn cảm giác hít thở thông thoáng. Nhà sản xuất hàng đầu các bộ dụng cụ rửa mũi, dung dịch muối sinh lý và sản phẩm chăm sóc mũi.",
         keywords: ["rửa mũi", "bộ dụng cụ rửa mũi", "chăm sóc mũi", "dung dịch muối sinh lý", "sức khỏe mũi", "chăm sóc hô hấp", "làm sạch mũi"],
         openGraph: {
