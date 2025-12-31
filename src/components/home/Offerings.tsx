@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useT } from '../i18n/I18nProvider';
+import Link from 'next/link';
 
-const Offerings = () => {                                       
-    const t = useT();
+const Offerings = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -44,16 +43,16 @@ const Offerings = () => {
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
                     {/* Left Column - Title */}
                     <div className="w-full lg:w-1/3 flex-shrink-0">
-                        <h1 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] text-xl sm:text-2xl lg:text-[28px] leading-[1.2]">
-                            <span className="text-[rgb(225,162,0)]">{t('offerings.title.highlight')}</span>{' '}
-                            <span className="text-[rgb(111,95,53)]">{t('offerings.title.rest')}</span>
+                        <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] leading-[1.2]">
+                            <span className="text-[rgb(225,162,0)]">Nanocare</span>{' '}
+                            <span className="text-[rgb(111,95,53)]">Offering</span>
                         </h1>
                     </div>
 
                     {/* Right Column - Three Product Frames */}
                     <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-4">
                         {/* Frame 1 - Saline Solutions */}
-                        <div className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden">
+                        <Link href="/products" className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                             <div className="w-full h-full min-h-[200px] sm:min-h-[220px] lg:min-h-[240px] p-[10px]">
                                 <div 
                                     className="w-full h-full bg-cover bg-left relative rounded overflow-hidden" 
@@ -65,14 +64,14 @@ const Offerings = () => {
                                     <h3 
                                         className="absolute left-3 sm:left-4 bottom-3 sm:bottom-4 font-bold text-[18px] leading-[1.6] text-[rgb(34,34,34)] text-left z-10"
                                     >
-                                        {t('offerings.card1.title')}
+                                        Saline Solutions
                                     </h3>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
                         {/* Frame 2 - Nasal Rinse Kit */}
-                        <div className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden">
+                        <Link href="/products" className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                             <div className="w-full h-full min-h-[200px] sm:min-h-[220px] lg:min-h-[240px] p-[10px]">
                                 <div 
                                     className="w-full h-full bg-cover bg-left relative rounded overflow-hidden" 
@@ -84,14 +83,14 @@ const Offerings = () => {
                                     <h3 
                                         className="absolute left-3 sm:left-4 bottom-3 sm:bottom-4 font-bold text-[18px] leading-[1.6] text-[rgb(34,34,34)] text-left z-10"
                                     >
-                                        {t('offerings.card2.title')}
+                                        Nasal Rinse Kit
                                     </h3>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
                         {/* Frame 3 - Salt */}
-                        <div className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden">
+                        <Link href="/products" className="relative bg-white border-2 border-[rgb(225,162,0)] rounded-lg sm:rounded-[16px] overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
                             <div className="w-full h-full min-h-[200px] sm:min-h-[220px] lg:min-h-[240px] p-[10px]">
                                 <div 
                                     className="w-full h-full bg-cover bg-left relative rounded overflow-hidden" 
@@ -103,11 +102,11 @@ const Offerings = () => {
                                     <h3 
                                         className="absolute left-3 sm:left-4 bottom-3 sm:bottom-4 font-bold text-[18px] leading-[1.6] text-[rgb(34,34,34)] text-left z-10"
                                     >
-                                        {t('offerings.card3.title')}
+                                        Salt
                                     </h3>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>

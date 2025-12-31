@@ -1,0 +1,21 @@
+import { Metadata } from 'next';
+import Contact from '../../components/contact/Contact';
+
+export const metadata: Metadata = {
+    title: 'Contact Us | Nanocare',
+    description: 'Contact Nanocare - World\'s #1 nasal irrigation device manufacturer. We will respond to you within 24 hours.',
+    keywords: ['contact nanocare', 'contact information', 'nanocare address'],
+    openGraph: {
+        title: 'Contact Nanocare',
+        description: 'Contact Nanocare',
+        type: 'website',
+    },
+    alternates: {
+        canonical: '/contact',
+    },
+};
+
+export default function ContactPage() {
+    return <Contact />;
+}
+

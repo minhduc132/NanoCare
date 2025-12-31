@@ -1,17 +1,15 @@
 'use client';
 
 import React from 'react';
-import { useT } from '../i18n/I18nProvider';
 
 const Footer = () => {
-    const t = useT();
     return (
         <footer className="relative bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-4 font-[TWFucmwZSFeHRyYUxpZhLnRZg]">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-4 font-[var(--font-hind)]">
                     {/* Disclaimer - Left */}
                     <p className="text-sm sm:text-base text-black text-left flex-1">
-                        {t('footer.disclaimer')}
+                        This website is for informational purposes only. We do not provide online ordering services
                     </p>
 
                     {/* Copyright - Right */}
@@ -22,7 +20,7 @@ const Footer = () => {
                             </svg>
                         </div>
                         <p className="text-sm sm:text-base text-black text-right">
-                            {t('footer.copyright')}
+                            Copyright StrongBody, 2023
                         </p>
                     </div>
                 </div>

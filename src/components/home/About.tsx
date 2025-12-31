@@ -1,10 +1,8 @@
 'use client';
 
 import React from 'react';
-import { useT } from '../i18n/I18nProvider';
 
 const About = () => {
-    const t = useT();
     return (
         <section className="relative bg-white overflow-hidden">
             <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative max-w-7xl">
@@ -12,21 +10,16 @@ const About = () => {
                 <div className="hidden md:block absolute top-[280px] left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)] z-10"></div>
 
                 {/* Headline 6 */}
-                <h1 className="relative z-10 font-bold text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mb-4 sm:mb-6 px-4">
-                    <span className="text-[rgb(225,162,0)]">{t('about.headline.highlight')}</span>{' '}
-                    {t('about.headline.rest')
-                        .split('\n')
-                        .map((line, index, arr) => (
-                            <React.Fragment key={index}>
-                                {line}
-                                {index < arr.length - 1 && <br />}
-                            </React.Fragment>
-                        ))}
+                <h1 className="relative z-10 text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mb-4 sm:mb-6 px-4">
+                    <span className="text-[rgb(225,162,0)]">Nanocare</span>{' '}
+                    focuses on producing a wide range of products that<br />
+                    clean nasal passages, providing you with a sensation of<br />
+                    unrestricted breathing.
                 </h1>
 
                 {/* Paragraph 1 */}
-                <p className="relative font-[TWFucmwZSFeHRyYUxpZhLnRZg] z-10 text-sm sm:text-base text-[rgb(34,34,34)] text-center leading-[1.6] cursor-pointer pb-8 sm:pb-12 lg:pb-24">
-                    {t('about.link')}
+                <p className="relative font-[var(--font-hind)] z-10 text-sm sm:text-base text-[rgb(34,34,34)] text-center leading-[1.6] cursor-pointer pb-8 sm:pb-12 lg:pb-24">
+                    Explore Importance of nasal cleansing
                 </p>
 
                 {/* Line 1 */}
@@ -53,7 +46,7 @@ const About = () => {
                         {/* Text overlay - z-index cao hơn overlay để hiển thị trên */}
                         <div className="absolute bottom-0 left-0 right-0 z-20 px-4 sm:px-6 py-3 sm:py-4">
                             <p className="text-white text-sm sm:text-base leading-[1.6]">
-                                {t('about.card1')}
+                                Nasal cleansing is key to preventing infection and promoting public health.
                             </p>
                         </div>
                     </div>
@@ -72,7 +65,7 @@ const About = () => {
                             {/* TEXT OVERLAY - z-index cao hơn overlay */}
                             <div className="absolute bottom-0 left-0 right-0 z-20 px-3 sm:px-4 pt-3 sm:pt-4 pb-0">
                                 <p className="text-[rgb(241,243,244)] text-sm sm:text-base leading-[1.6] pb-3 sm:pb-4">
-                                    {t('about.card2')}
+                                    Nasal cleansing eases cold symptoms and lowers healthcare strain.
                                 </p>
                             </div>
                         </div>
@@ -89,7 +82,7 @@ const About = () => {
                             {/* TEXT OVERLAY - z-index cao hơn overlay */}
                             <div className="absolute bottom-0 left-0 right-0 z-20 px-3 sm:px-4 pt-3 sm:pt-4 pb-0">
                                 <p className="text-[rgb(241,243,244)] text-sm sm:text-base leading-[1.6] pb-3 sm:pb-4">
-                                    {t('about.card3')}
+                                    Nasal cleansing fights infections by eliminating pathogens from the respiratory tract.
                                 </p>
                             </div>
                         </div>

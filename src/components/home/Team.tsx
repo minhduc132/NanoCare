@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useT } from '../i18n/I18nProvider';
 
 const Team = () => {
-    const t = useT();
     const [contentOpacity, setContentOpacity] = useState(0);
     const [overlayOpacity, setOverlayOpacity] = useState(0.85);
     const sectionRef = useRef<HTMLElement>(null);
@@ -66,16 +64,17 @@ const Team = () => {
                 }}
             >
                 {/* Line vàng từ trên xuống */}
-                <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 h-[100px] w-[2px] bg-[rgb(225,162,0)]"></div>
+                <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
 
                 {/* Headline 13 */}
-                <h1 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-xl sm:text-2xl lg:text-[28px] text-white text-center leading-[1.6] px-4">
-                    {t('team.title')}
+                <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] text-white text-center leading-[1.6] px-4">
+                    The team behind <span className="text-[rgb(225,162,0)]">Nanocare</span>
                 </h1>
 
                 {/* Paragraph 7 */}
-                <p className="text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4 px-4">
-                    {t('team.description')}
+                <p className="text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4 px-4 max-w-4xl mx-auto">
+                    The Nanocare team, comprising scientists, engineers, and researchers, is<br />
+                    dedicated to maximizing resources for nano-technology development.
                 </p>
 
                 {/* Cards container */}
@@ -90,10 +89,10 @@ const Team = () => {
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
-                            {t('team.role.exportManager')}
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                            Export Manager
                         </h3>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Ms. Richy (Thuy)
                         </h3>
                     </div>
@@ -108,10 +107,10 @@ const Team = () => {
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
-                            {t('team.role.brandManager')}
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                            Brand Manager
                         </h3>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Ms. Lion Rose
                         </h3>
                         {/* Line vàng dưới chữ Ms. Lion Rose */}
@@ -128,10 +127,10 @@ const Team = () => {
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
-                            {t('team.role.productionManager')}
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                            Production Manager
                         </h3>
-                        <h3 className="font-[TWFucmwZSFeHRyYUxpZhLnRZg] font-bold text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Mr. Ha
                         </h3>
                     </div>

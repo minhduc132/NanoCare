@@ -1,18 +1,12 @@
-import localFont from "next/font/local";
+import { Hind } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
-const nanocareFont = localFont({
-    src: [
-        {
-            path: "../../public/fonts/TWFucmwZSFeHRyYUxpZhLnRZg.woff2",
-            weight: "400",
-            style: "normal",
-        },
-    ],
-    variable: "--font-nanocare",
+const hindFont = Hind({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-hind",
     display: "swap",
-    preload: true,
 });
 
 // Get base URL - prioritize custom domain, then Vercel URL, then fallback
@@ -45,7 +39,6 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        alternateLocale: ["vi_VN"],
         url: "/",
         siteName: "Nanocare",
         title: "Nanocare - World's #1 Nasal Irrigation Device Manufacturer",
@@ -87,6 +80,8 @@ export const metadata: Metadata = {
     manifest: "/manifest.json",
 };
 
+import Header from '../components/Header';
+
 export default function RootLayout({
     children,
 }: {
@@ -94,7 +89,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${nanocareFont.variable} bg-white text-base`}>
+            <body className={`${hindFont.variable} bg-white text-base`}>
+                <Header />
                 {children}
             </body>
         </html>
