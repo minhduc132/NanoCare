@@ -18,7 +18,7 @@ const About = () => {
                 </h1>
 
                 {/* Paragraph 1 */}
-                <p className="relative font-[var(--font-hind)] z-10 text-sm sm:text-base text-[rgb(34,34,34)] text-center leading-[1.6] cursor-pointer pb-8 sm:pb-12 lg:pb-24">
+                <p className="relative font-[var(--font-poppins)] z-10 text-sm sm:text-base text-[rgb(34,34,34)] text-center leading-[1.6] cursor-pointer pb-8 sm:pb-12 lg:pb-24">
                     Explore Importance of nasal cleansing
                 </p>
 

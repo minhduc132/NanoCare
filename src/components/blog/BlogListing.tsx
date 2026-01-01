@@ -37,11 +37,16 @@ const BlogListing = ({ blogs, isPreview = false }: BlogListingProps) => {
             )}
 
             {/* Blog Posts Grid */}
-            <div className={`grid grid-cols-1 ${isPreview ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6 sm:gap-8 lg:gap-10`}>
+            <div className={`grid grid-cols-1 ${isPreview ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-4'} gap-6 sm:gap-8 lg:gap-10`}>
                     {blogs.map((post) => (
                         <article key={post.slug} className="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <Link href={`/blog/${post.slug}`}>
-                                <div className="w-full h-[200px] sm:h-[250px] bg-cover bg-center" style={{ backgroundImage: `url(${post.image})` }}></div>
+                                <div 
+                                    className="w-full h-[200px] sm:h-[250px] bg-cover bg-center" 
+                                    style={{ backgroundImage: `url(${post.image})` }}
+                                    role="img"
+                                    aria-label={`${post.title} featured image`}
+                                ></div>
                             </Link>
                             <div className="p-4 sm:p-6 flex-1 flex flex-col">
                                 <div className="mb-3">
@@ -102,10 +107,10 @@ const BlogListing = ({ blogs, isPreview = false }: BlogListingProps) => {
 
     if (isPreview) {
         return (
-            <div className="font-[var(--font-hind)]">
+            <div className="font-[var(--font-poppins)]">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12">
                     <div>
-                        <h2 className="font-[var(--font-hind)] text-2xl sm:text-3xl lg:text-[36px] mb-4">
+                        <h2 className="font-[var(--font-poppins)] text-2xl sm:text-3xl lg:text-[36px] mb-4">
                             <span className="text-[rgb(111,95,53)]">News</span>{' '}
                             <span className="text-[rgb(225,162,0)]">& Blog</span>
                         </h2>
@@ -126,7 +131,7 @@ const BlogListing = ({ blogs, isPreview = false }: BlogListingProps) => {
     }
 
     return (
-        <main className="min-h-screen font-[var(--font-hind)] bg-gradient-to-b from-gray-50 to-white">
+        <main className="min-h-screen font-[var(--font-poppins)] bg-gradient-to-b from-gray-50 to-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:py-12 lg:py-16">
                 {content}
             </div>

@@ -29,13 +29,21 @@ export async function generateMetadata({
     return {
         title: `${post.title} | Nanocare`,
         description: post.excerpt,
-        keywords: ['nasal care blog', 'nanocare news', 'nasal rinse', 'respiratory health'],
+        keywords: ['nasal care blog', 'nanocare news', 'nasal rinse', 'respiratory health', post.category.toLowerCase()],
         openGraph: {
             title: `${post.title} | Nanocare`,
             description: post.excerpt,
             images: [post.image],
             type: 'article',
             publishedTime: post.date,
+            url: `/blog/${slug}`,
+            siteName: 'Nanocare',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${post.title} | Nanocare`,
+            description: post.excerpt,
+            images: [post.image],
         },
         alternates: {
             canonical: `/blog/${slug}`,

@@ -10,7 +10,7 @@ const Certificates = () => {
                 <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
 
                 {/* Headline 21 */}
-                <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-8 sm:mt-12 lg:mt-[60px]">
+                <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-8 sm:mt-12 lg:mt-[60px]">
                     Certificates
                 </h1>
 

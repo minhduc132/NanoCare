@@ -4,16 +4,16 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <section className="relative min-h-[800px] bg-white font-[var(--font-hind)]">
+        <section className="relative min-h-[800px] bg-white font-[var(--font-poppins)]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 {/* Title */}
-                <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] text-center leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px] mb-8 sm:mb-10 lg:mb-12">
+                <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] text-center leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px] mb-8 sm:mb-10 lg:mb-12">
                     <span className="text-[rgb(225,162,0)]">Contact</span>{' '}
                     <span className="text-[rgb(111,95,53)]">us</span>
                 </h1>
 
                 {/* Contact Information Blocks */}
-                <div className="flex flex-col sm:flex-row w-full items-center gap-6 sm:gap-8 lg:gap-12 xl:gap-24 mb-8 sm:mb-12 lg:mb-16">
+                <div className="flex flex-col sm:flex-row w-full items-start sm:items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-24 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
                     {/* Headquarters */}
                     <div className="flex flex-1 flex-col items-start w-full sm:w-auto">
                         <div className="flex items-start gap-2 mb-2">
@@ -24,7 +24,7 @@ const Contact = () => {
                             </div>
                             <h3 className="text-sm sm:text-base text-[rgb(225,162,0)] font-bold rounded">Headquarters</h3>
                         </div>
-                        <p className="text-sm sm:text-base text-black text-start px-4">Group 5, Cu Khoi Ward,Long Bien District,Hanoi</p>
+                        <p className="text-xs sm:text-sm md:text-base text-black text-start pl-0 sm:pl-4">Group 5, Cu Khoi Ward,Long Bien District,Hanoi</p>
                     </div>
 
                     {/* Phone */}
@@ -37,7 +37,7 @@ const Contact = () => {
                             </div>
                             <h3 className="text-sm sm:text-base text-[rgb(225,162,0)] font-bold">Phone</h3>
                         </div>
-                        <p className="text-sm sm:text-base text-black text-start">+84 936 386 861</p>
+                        <p className="text-xs sm:text-sm md:text-base text-black text-start">+84 936 386 861</p>
                     </div>
 
                     {/* Email */}
@@ -50,21 +50,21 @@ const Contact = () => {
                             </div>
                             <h3 className="text-sm sm:text-base text-[rgb(225,162,0)] font-bold">Email</h3>
                         </div>
-                        <p className="text-sm sm:text-base text-black text-start break-all">lionrose.strongbody@gmail.com</p>
+                        <p className="text-xs sm:text-sm md:text-base text-black text-start break-all">lionrose.strongbody@gmail.com</p>
                     </div>
                 </div>
 
                 {/* Main Content - 2 Columns */}
-                <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12 items-start">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
                     {/* Left Column - Welcome Message */}
-                    <div className="flex flex-1 flex-col items-center justify-center text-center w-full lg:w-auto lg:text-left pt-6">
-                        <div className=" lg:text-left">
-                            <h3 className=" text-2xl sm:text-3xl lg:text-4xl text-black leading-[1.4] mb-6">
+                    <div className="flex flex-1 flex-col items-center justify-center text-center w-full lg:w-auto lg:text-left pt-4 sm:pt-6">
+                        <div className="lg:text-left">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.4] mb-4 sm:mb-6">
                                 Welcome pharma<br />
                                 retailers, ENT partners,<br />
                                 ODM and distributors.
                             </h3>
-                            <p className=" text-base sm:text-lg lg:text-xl text-black leading-[1.7]">
+                            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black leading-[1.7]">
                                 Nanocare, the manufacturer of<br />
                                 nasal rinse kits, will respond to you<br />
                                 within 24 hours.
@@ -74,38 +74,38 @@ const Contact = () => {
 
                     {/* Right Column - Contact Form */}
                     <div className="flex-1 w-full lg:w-auto">
-                        <form className="w-full bg-white p-4 sm:p-6">
+                        <form className="w-full max-w-full bg-white p-4 sm:p-6">
                             <input
                                 type="text"
                                 name="name"
                                 required
                                 placeholder="Your name"
-                                className="w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
+                                className="w-full max-w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
                             />
                             <input
                                 type="email"
                                 name="email"
                                 required
                                 placeholder="Email"
-                                className="w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
+                                className="w-full max-w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
                             />
                             <input
                                 type="tel"
                                 name="phone"
                                 required
                                 placeholder="Phone number"
-                                className="w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
+                                className="w-full max-w-[380px] h-12 sm:h-[50px] mb-4 px-4 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black placeholder:text-gray-400"
                             />
                             <textarea
                                 name="message"
                                 required
                                 placeholder="Your message"
                                 rows={4}
-                                className="w-[380px] mb-4 px-4 py-3 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black resize-none placeholder:text-gray-400"
+                                className="w-full max-w-[380px] mb-4 px-4 py-3 border border-gray-200 rounded text-sm sm:text-base outline-none focus:outline-none focus:ring-0 text-black resize-none placeholder:text-gray-400"
                             ></textarea>
                             <button
                                 type="submit"
-                                className="w-[380px] h-12 sm:h-[50px] bg-[rgb(225,162,0)] text-white font-bold text-sm sm:text-base outline-none focus:outline-none focus:ring-0 rounded cursor-pointer hover:opacity-90 transition-opacity"
+                                className="w-full max-w-[380px] h-12 sm:h-[50px] bg-[rgb(225,162,0)] text-white font-bold text-sm sm:text-base outline-none focus:outline-none focus:ring-0 rounded cursor-pointer hover:opacity-90 transition-opacity"
                             >
                                 Submit
                             </button>

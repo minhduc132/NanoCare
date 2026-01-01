@@ -43,7 +43,7 @@ const Offerings = () => {
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
                     {/* Left Column - Title */}
                     <div className="w-full lg:w-1/3 flex-shrink-0">
-                        <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] leading-[1.2]">
+                        <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] leading-[1.2]">
                             <span className="text-[rgb(225,162,0)]">Nanocare</span>{' '}
                             <span className="text-[rgb(111,95,53)]">Offering</span>
                         </h1>

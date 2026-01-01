@@ -14,7 +14,7 @@ const ProductDetail = ({ product, detail }: ProductDetailProps) => {
     const images = detail.images && detail.images.length > 0 ? detail.images : [product.image];
 
     return (
-        <main className="min-h-screen font-[var(--font-hind)] bg-gradient-to-b from-gray-50 to-white">
+        <main className="min-h-screen font-[var(--font-poppins)] bg-gradient-to-b from-gray-50 to-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:py-16">
                 {/* Breadcrumb */}
                 <nav className="mb-6 text-sm text-gray-600">
@@ -26,7 +26,7 @@ const ProductDetail = ({ product, detail }: ProductDetailProps) => {
                         Products Nanocare
                     </Link>
                     {' / '}
-                    <span className="text-gray-800">{product.name.split('\n')[0]}</span>
+                    <span className="text-gray-800">{product.name}</span>
                 </nav>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
@@ -37,6 +37,8 @@ const ProductDetail = ({ product, detail }: ProductDetailProps) => {
                             <div 
                                 className="w-full h-full bg-cover bg-center"
                                 style={{ backgroundImage: `url(${selectedImage})` }}
+                                role="img"
+                                aria-label={`${product.name} product image`}
                             ></div>
                         </div>
                         
@@ -56,6 +58,8 @@ const ProductDetail = ({ product, detail }: ProductDetailProps) => {
                                         <div 
                                             className="w-full h-full bg-cover bg-center rounded"
                                             style={{ backgroundImage: `url(${img})` }}
+                                            role="img"
+                                            aria-label={`${product.name} thumbnail ${index + 1}`}
                                         ></div>
                                     </button>
                                 ))}
@@ -74,12 +78,7 @@ const ProductDetail = ({ product, detail }: ProductDetailProps) => {
 
                         {/* Product Name */}
                         <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[rgb(34,34,34)] mb-6 leading-[1.3]">
-                            {product.name.split('\n').map((line, i, arr) => (
-                                <React.Fragment key={i}>
-                                    {line}
-                                    {i < arr.length - 1 && <br />}
-                                </React.Fragment>
-                            ))}
+                            {product.name}
                         </h1>
 
                         {/* Description */}

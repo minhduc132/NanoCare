@@ -3,17 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ResourceModal from '../resources/ResourceModal';
-import { ResourcesListingData, ResourceItem } from '../../lib/data-loader';
+import { ResourceItem } from '../../lib/data-loader';
 
 interface MediaResourcesProps {
-    data: ResourcesListingData | null;
+    resources: ResourceItem[];
 }
 
-const MediaResources = ({ data }: MediaResourcesProps) => {
+const MediaResources = ({ resources }: MediaResourcesProps) => {
     const [selectedResource, setSelectedResource] = useState<ResourceItem | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const resources = data?.resources || [];
     
     // Show only first 4 resources on home page
     const featuredResources = resources.slice(0, 4);
@@ -35,7 +33,7 @@ const MediaResources = ({ data }: MediaResourcesProps) => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 {/* Title */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 lg:mb-12">
-                    <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px] mb-4 sm:mb-0">
+                    <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px] mb-4 sm:mb-0">
                         <span className="text-[rgb(111,95,53)]">Nanocare's</span>{' '}
                         <span className="text-[rgb(225,162,0)]">media resource</span>
                     </h1>
@@ -65,6 +63,8 @@ const MediaResources = ({ data }: MediaResourcesProps) => {
                                 <div 
                                     className="w-full h-[220px] sm:h-[180px] lg:h-[200px] bg-cover bg-center rounded"
                                     style={{ backgroundImage: `url(${resource.image})` }}
+                                    role="img"
+                                    aria-label={`${resource.title} resource image`}
                                 ></div>
                                 
                                 {/* Badge */}

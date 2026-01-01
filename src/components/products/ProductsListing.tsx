@@ -20,7 +20,7 @@ const ProductsListing = ({ products }: ProductsListingProps) => {
     }, {} as Record<string, ProductListItem[]>);
 
     return (
-        <main className="min-h-screen font-[var(--font-hind)] bg-gradient-to-b from-gray-50 to-white">
+        <main className="min-h-screen font-[var(--font-poppins)] bg-gradient-to-b from-gray-50 to-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16">
                 {/* Page Title with Breadcrumb */}
                 <nav className="mb-6 text-sm text-gray-600">
@@ -68,17 +68,14 @@ const ProductsListing = ({ products }: ProductsListingProps) => {
                                         <div 
                                             className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                                             style={{ backgroundImage: `url(${product.image})` }}
+                                            role="img"
+                                            aria-label={`${product.name} product image`}
                                         ></div>
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     </div>
                                     <div className="p-5 sm:p-6 bg-white">
                                         <h3 className="text-base sm:text-lg text-[rgb(34,34,34)] leading-[1.5] font-bold mb-2 group-hover:text-[rgb(225,162,0)] transition-colors">
-                                            {product.name.split('\n').map((line, i, arr) => (
-                                                <React.Fragment key={i}>
-                                                    {line}
-                                                    {i < arr.length - 1 && <br />}
-                                                </React.Fragment>
-                                            ))}
+                                            {product.name}
                                         </h3>
                                         <div className="flex items-center gap-2 text-sm text-[rgb(225,162,0)] font-semibold mt-3">
                                             <span>View Details</span>

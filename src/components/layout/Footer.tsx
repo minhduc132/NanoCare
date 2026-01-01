@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="relative bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-4 font-[var(--font-hind)]">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 mb-4 font-[var(--font-poppins)]">
                     {/* Disclaimer - Left */}
                     <p className="text-sm sm:text-base text-black text-left flex-1">
                         This website is for informational purposes only. We do not provide online ordering services

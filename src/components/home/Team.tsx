@@ -67,7 +67,7 @@ const Team = () => {
                 <div className="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 h-[80px] w-[2px] bg-[rgb(225,162,0)]"></div>
 
                 {/* Headline 13 */}
-                <h1 className="font-[var(--font-hind)] text-xl sm:text-2xl lg:text-[28px] text-white text-center leading-[1.6] px-4">
+                <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] text-white text-center leading-[1.6] px-4">
                     The team behind <span className="text-[rgb(225,162,0)]">Nanocare</span>
                 </h1>
 
@@ -82,17 +82,17 @@ const Team = () => {
                     {/* Group 10 - Export Manager */}
                     <div className="w-full sm:w-[280px] lg:w-[320px] xl:w-[380px] flex flex-col items-center">
                         <div 
-                            className="w-full h-[250px] sm:h-[280px] lg:h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
+                            className="w-full h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
                             style={{ 
                                 backgroundImage: 'url(/images/avatar1.png)',
                                 backgroundColor: '#e5e7eb',
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
                             Export Manager
                         </h3>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Ms. Richy (Thuy)
                         </h3>
                     </div>
@@ -100,17 +100,17 @@ const Team = () => {
                     {/* Group 11 - Brand Manager */}
                     <div className="w-full sm:w-[280px] lg:w-[320px] xl:w-[380px] flex flex-col items-center relative">
                         <div 
-                            className="w-full h-[250px] sm:h-[280px] lg:h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
+                            className="w-full h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
                             style={{ 
                                 backgroundImage: 'url(/images/avatar.jpg)',
                                 backgroundColor: '#e5e7eb',
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
                             Brand Manager
                         </h3>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Ms. Lion Rose
                         </h3>
                         {/* Line vàng dưới chữ Ms. Lion Rose */}
@@ -120,17 +120,17 @@ const Team = () => {
                     {/* Group 12 - Production Manager */}
                     <div className="w-full sm:w-[280px] lg:w-[320px] xl:w-[380px] flex flex-col items-center">
                         <div 
-                            className="w-full h-[250px] sm:h-[280px] lg:h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
+                            className="w-full h-[320px] xl:h-[380px] bg-cover bg-center rounded-lg sm:rounded-[16px] shadow-xl"
                             style={{ 
                                 backgroundImage: 'url(/images/avatar3.jpg)',
                                 backgroundColor: '#e5e7eb',
                                 boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
                             }}
                         ></div>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6] mt-3 sm:mt-4">
                             Production Manager
                         </h3>
-                        <h3 className="font-[var(--font-hind)] text-sm sm:text-base text-white text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-poppins)] text-sm sm:text-base text-white text-center leading-[1.6]">
                             Mr. Ha
                         </h3>
                     </div>

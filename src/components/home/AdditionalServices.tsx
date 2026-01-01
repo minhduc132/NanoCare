@@ -7,7 +7,7 @@ const AdditionalServices = () => {
         <section className="relative min-h-[400px] sm:min-h-[470px] bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 {/* Headline 22 */}
-                <h1 className="font-[var(--font-hind)]  text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px]">
+                <h1 className="font-[var(--font-poppins)]  text-xl sm:text-2xl lg:text-[28px] text-[rgb(111,95,53)] text-center leading-[1.6] mt-8 sm:mt-10 lg:mt-[40px]">
                     Additional Services
                 </h1>
 
@@ -22,7 +22,7 @@ const AdditionalServices = () => {
                             </svg>
                         </div>
                         {/* Headline 23 */}
-                        <h3 className="font-[var(--font-hind)] font-bold text-lg sm:text-xl lg:text-[20px] text-black text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-poppins)] font-bold text-lg sm:text-xl lg:text-[20px] text-black text-center leading-[1.6]">
                             Lab Quality Test
                         </h3>
                         {/* Paragraph 8 */}
@@ -40,7 +40,7 @@ const AdditionalServices = () => {
                             </svg>
                         </div>
                         {/* Headline 24 */}
-                        <h3 className="font-[var(--font-hind)] font-bold text-lg sm:text-xl lg:text-[20px] text-black text-center leading-[1.6]">
+                        <h3 className="font-[var(--font-poppins)] font-bold text-lg sm:text-xl lg:text-[20px] text-black text-center leading-[1.6]">
                             ODM
                         </h3>
                         {/* Paragraph 9 */}

@@ -14,9 +14,14 @@ const FeaturedProducts = ({ data }: FeaturedProductsProps) => {
     // Helper component for product items
     const ProductItem = ({ image, text, slug, hasLeftChevron = false, hasRightChevron = false }: { image: string; text: string; slug?: string; hasLeftChevron?: boolean; hasRightChevron?: boolean }) => {
         const content = (
-            <div className="min-w-[240px] sm:min-w-[280px] flex flex-col relative cursor-pointer group">
-                <div className="h-[200px] sm:h-[250px] lg:h-[300px] rounded-lg overflow-hidden relative">
-                    <div className="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-300 group-hover:scale-105" style={{ backgroundImage: `url(${image})` }}></div>
+                    <div className="min-w-[240px] sm:min-w-[280px] flex flex-col relative cursor-pointer group">
+                        <div className="h-[200px] sm:h-[250px] lg:h-[300px] rounded-lg overflow-hidden relative">
+                            <div 
+                                className="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-300 group-hover:scale-105" 
+                                style={{ backgroundImage: `url(${image})` }}
+                                role="img"
+                                aria-label={`${text} product image`}
+                            ></div>
                     {hasLeftChevron && (
                         <div className="absolute left-2 sm:left-[10px] top-1/2 transform -translate-y-1/2 z-10">
                             <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,12 +38,7 @@ const FeaturedProducts = ({ data }: FeaturedProductsProps) => {
                     )}
                 </div>
                 <p className="text-sm sm:text-base text-[rgb(34,34,34)] leading-[1.6] mt-2 group-hover:text-[rgb(225,162,0)] transition-colors">
-                    {text.split('\n').map((line, i, arr) => (
-                        <React.Fragment key={i}>
-                            {line}
-                            {i < arr.length - 1 && <br />}
-                        </React.Fragment>
-                    ))}
+                    {text}
                 </p>
             </div>
         );
@@ -63,7 +63,7 @@ const FeaturedProducts = ({ data }: FeaturedProductsProps) => {
                         <div className="w-[4px] h-4 sm:h-[16px] bg-[rgb(225,162,0)]"></div>
                         <div className="w-[4px] h-4 sm:h-[16px] bg-[rgb(225,162,0)]"></div>
                     </div>
-                    <h2 className="font-[var(--font-hind)] text-base sm:text-lg lg:text-[20px] text-[rgb(111,95,53)]">
+                    <h2 className="font-[var(--font-poppins)] text-base sm:text-lg lg:text-[20px] text-[rgb(111,95,53)]">
                         {title}
                     </h2>
                 </div>
@@ -86,10 +86,10 @@ const FeaturedProducts = ({ data }: FeaturedProductsProps) => {
     );
 
     return (
-        <section className="relative min-h-[800px] sm:min-h-[1200px] lg:min-h-[1600px] font-[var(--font-hind)] bg-white">
+        <section className="relative min-h-[800px] sm:min-h-[1200px] lg:min-h-[1600px] font-[var(--font-poppins)] bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16">
                 {/* Featured Products Title */}
-                <h1 className="font-[var(--font-hind)]  text-xl sm:text-2xl lg:text-[28px] text-left mb-6 sm:mb-8 lg:mb-12">
+                <h1 className="font-[var(--font-poppins)] text-xl sm:text-2xl lg:text-[28px] text-left mb-6 sm:mb-8 lg:mb-12">
                     <span className="text-[rgb(111,95,53)]">Featured</span>{' '}
                     <span className="text-[rgb(225,162,0)]">Products</span>
                 </h1>

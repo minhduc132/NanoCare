@@ -45,35 +45,36 @@ export interface BlogDetail {
 }
 
 /**
- * Load products list from products.md
+ * Load products list from product1.md to product11.md
  */
 export function loadProducts(): ProductListItem[] {
     try {
-        const filePath = path.join(dataDirectory, 'products.md');
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        
-        // Split by --- separator
-        const sections = fileContents.split(/^---$/gm).filter(s => s.trim() && !s.trim().startsWith('#'));
-        
         const products: ProductListItem[] = [];
         
-        for (const section of sections) {
-            // Wrap section in --- markers for proper frontmatter parsing
-            const wrappedSection = `---\n${section.trim()}\n---`;
-            const { data } = matter(wrappedSection);
-            
-            if (data.id && data.slug) {
-                products.push({
-                    id: String(data.id),
-                    slug: String(data.slug),
-                    name: String(data.name || ''),
-                    category: String(data.category || ''),
-                    image: String(data.image || ''),
-                });
+        // Load from product1.md to product11.md
+        for (let i = 1; i <= 11; i++) {
+            try {
+                const filePath = path.join(dataDirectory, `product${i}.md`);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data } = matter(fileContents);
+                
+                if (data.id && data.slug) {
+                    products.push({
+                        id: String(data.id),
+                        slug: String(data.slug),
+                        name: String(data.name || ''),
+                        category: String(data.category || ''),
+                        image: String(data.image || ''),
+                    });
+                }
+            } catch (fileError) {
+                console.warn(`Error loading product${i}.md:`, fileError);
+                // Continue loading other products even if one fails
             }
         }
         
-        return products;
+        // Sort by id to maintain order
+        return products.sort((a, b) => parseInt(a.id) - parseInt(b.id));
     } catch (error) {
         console.error('Error loading products:', error);
         return [];
@@ -81,32 +82,32 @@ export function loadProducts(): ProductListItem[] {
 }
 
 /**
- * Load product details from product-detail.md
+ * Load product details from product1.md to product11.md (merged files)
  */
 export function loadProductDetails(): Record<string, ProductDetail> {
     try {
-        const filePath = path.join(dataDirectory, 'product-detail.md');
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        
-        // Split by --- separator
-        const sections = fileContents.split(/^---$/gm).filter(s => s.trim());
-        
         const details: Record<string, ProductDetail> = {};
         
-        for (const section of sections) {
-            // Wrap section in --- markers for proper frontmatter parsing
-            const wrappedSection = `---\n${section.trim()}\n---`;
-            const { data } = matter(wrappedSection);
-            
-            if (data.slug) {
-                details[data.slug] = {
-                    slug: data.slug,
-                    images: data.images || [],
-                    description: data.description || '',
-                    specifications: data.specifications || [],
-                    benefits: data.benefits || [],
-                    content: data.content || '',
-                };
+        // Load from product1.md to product11.md (each file contains both product and detail info)
+        for (let i = 1; i <= 11; i++) {
+            try {
+                const filePath = path.join(dataDirectory, `product${i}.md`);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data, content } = matter(fileContents);
+                
+                if (data.slug) {
+                    details[data.slug] = {
+                        slug: data.slug,
+                        images: data.images || [],
+                        description: data.description || '',
+                        specifications: data.specifications || [],
+                        benefits: data.benefits || [],
+                        content: data.content || content || '',
+                    };
+                }
+            } catch (fileError) {
+                console.warn(`Error loading product${i}.md:`, fileError);
+                // Continue loading other product details even if one fails
             }
         }
         
@@ -126,32 +127,32 @@ export function getProductDetail(slug: string): ProductDetail | null {
 }
 
 /**
- * Load blogs list from blogs.md
+ * Load blogs list from blog1.md to blog4.md
  */
 export function loadBlogs(): BlogListItem[] {
     try {
-        const filePath = path.join(dataDirectory, 'blogs.md');
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        
-        // Split by --- separator
-        const sections = fileContents.split(/^---$/gm).filter(s => s.trim() && !s.trim().startsWith('#'));
-        
         const blogs: BlogListItem[] = [];
         
-        for (const section of sections) {
-            // Wrap section in --- markers for proper frontmatter parsing
-            const wrappedSection = `---\n${section.trim()}\n---`;
-            const { data } = matter(wrappedSection);
-            
-            if (data.slug) {
-                blogs.push({
-                    slug: String(data.slug),
-                    title: String(data.title || ''),
-                    excerpt: String(data.excerpt || ''),
-                    image: String(data.image || ''),
-                    date: String(data.date || ''),
-                    category: String(data.category || ''),
-                });
+        // Load from blog1.md to blog4.md
+        for (let i = 1; i <= 4; i++) {
+            try {
+                const filePath = path.join(dataDirectory, `blog${i}.md`);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data } = matter(fileContents);
+                
+                if (data.slug) {
+                    blogs.push({
+                        slug: String(data.slug),
+                        title: String(data.title || ''),
+                        excerpt: String(data.excerpt || ''),
+                        image: String(data.image || ''),
+                        date: String(data.date || ''),
+                        category: String(data.category || ''),
+                    });
+                }
+            } catch (fileError) {
+                console.warn(`Error loading blog${i}.md:`, fileError);
+                // Continue loading other blogs even if one fails
             }
         }
         
@@ -168,28 +169,28 @@ export function loadBlogs(): BlogListItem[] {
 }
 
 /**
- * Load blog details from blog-detail.md
+ * Load blog details from blog1.md to blog4.md (merged files)
  */
 export function loadBlogDetails(): Record<string, BlogDetail> {
     try {
-        const filePath = path.join(dataDirectory, 'blog-detail.md');
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        
-        // Split by --- separator
-        const sections = fileContents.split(/^---$/gm).filter(s => s.trim());
-        
         const details: Record<string, BlogDetail> = {};
         
-        for (const section of sections) {
-            // Wrap section in --- markers for proper frontmatter parsing
-            const wrappedSection = `---\n${section.trim()}\n---`;
-            const { data, content } = matter(wrappedSection);
-            
-            if (data.slug) {
-                details[data.slug] = {
-                    slug: data.slug,
-                    content: content || '',
-                };
+        // Load from blog1.md to blog4.md (each file contains both blog and detail info)
+        for (let i = 1; i <= 4; i++) {
+            try {
+                const filePath = path.join(dataDirectory, `blog${i}.md`);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data, content } = matter(fileContents);
+                
+                if (data.slug) {
+                    details[data.slug] = {
+                        slug: data.slug,
+                        content: data.content || content || '',
+                    };
+                }
+            } catch (fileError) {
+                console.warn(`Error loading blog${i}.md:`, fileError);
+                // Continue loading other blog details even if one fails
             }
         }
         
@@ -319,7 +320,42 @@ export interface FeaturedProductsData {
 }
 
 export function loadFeaturedProductsData(): FeaturedProductsData | null {
-    return loadComponentData<FeaturedProductsData>('featured-products.md');
+    try {
+        // Load products from individual files
+        const products = loadProducts();
+        
+        // Group products by category
+        const categoriesMap: Record<string, FeaturedProductItem[]> = {};
+        
+        products.forEach((product, index) => {
+            if (!categoriesMap[product.category]) {
+                categoriesMap[product.category] = [];
+            }
+            
+            categoriesMap[product.category].push({
+                text: product.name,
+                image: product.image,
+                slug: product.slug,
+                hasLeftChevron: index === 0 || (index > 0 && products[index - 1].category !== product.category),
+                hasRightChevron: index === products.length - 1 || (index < products.length - 1 && products[index + 1].category !== product.category),
+            });
+        });
+        
+        // Convert to categories array
+        const categories: FeaturedProductCategory[] = Object.entries(categoriesMap).map(([title, items]) => ({
+            title,
+            items,
+        }));
+        
+        return {
+            titleLine1: 'Featured',
+            titleLine2: 'Products',
+            categories,
+        };
+    } catch (error) {
+        console.error('Error loading featured products data:', error);
+        return null;
+    }
 }
 
 // Partner data
@@ -423,8 +459,60 @@ export interface ResourcesListingData {
     resources: ResourceItem[];
 }
 
+/**
+ * Load resources list from resource1.md to resource8.md
+ */
+export function loadResources(): ResourceItem[] {
+    try {
+        const resources: ResourceItem[] = [];
+        
+        // Load from resource1.md to resource8.md
+        for (let i = 1; i <= 8; i++) {
+            try {
+                const filePath = path.join(dataDirectory, `resource${i}.md`);
+                const fileContents = fs.readFileSync(filePath, 'utf8');
+                const { data } = matter(fileContents);
+                
+                if (data.id) {
+                    resources.push({
+                        id: String(data.id),
+                        title: String(data.title || ''),
+                        image: String(data.image || ''),
+                        type: (data.type === 'gated' || data.type === 'direct') ? data.type : 'direct',
+                        fileUrl: data.fileUrl ? String(data.fileUrl) : undefined,
+                    });
+                }
+            } catch (fileError) {
+                console.warn(`Error loading resource${i}.md:`, fileError);
+                // Continue loading other resources even if one fails
+            }
+        }
+        
+        // Sort by id to maintain order
+        return resources.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+    } catch (error) {
+        console.error('Error loading resources:', error);
+        return [];
+    }
+}
+
 export function loadResourcesListingData(): ResourcesListingData | null {
-    return loadComponentData<ResourcesListingData>('resources-listing.md');
+    try {
+        // Load metadata from resources-listing.md
+        const metadata = loadComponentData<Omit<ResourcesListingData, 'resources'>>('resources-listing.md');
+        if (!metadata) return null;
+        
+        // Load resources from individual files
+        const resources = loadResources();
+        
+        return {
+            ...metadata,
+            resources,
+        };
+    } catch (error) {
+        console.error('Error loading resources listing data:', error);
+        return null;
+    }
 }
 
 // Resource Modal data

@@ -13,7 +13,6 @@ const Hero = () => {
                 loop
                 autoPlay
                 playsInline
-                webkit-playsinline
                 muted
                 aria-label="Hero background video"
             >
@@ -25,7 +24,7 @@ const Hero = () => {
             {/* Container */}
             <div className="relative z-10 mx-auto max-w-[1200px] h-full px-4 flex flex-col items-center justify-center min-h-[500px] md:min-h-[760px]">
                 {/* Title */}
-                <h1 className="font-[var(--font-hind)] text-[24px] md:text-[32px] lg:text-[40px] text-[rgb(241,243,244)] text-center leading-[1.6] z-30 mb-6 md:mb-8 px-4">
+                <h1 className="font-[var(--font-poppins)] text-[24px] md:text-[32px] lg:text-[40px] text-[rgb(241,243,244)] text-center leading-[1.6] z-30 mb-6 md:mb-8 px-4">
                     World's #1 nasal irrigation device manufacturer
                 </h1>
 

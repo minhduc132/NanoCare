@@ -26,15 +26,33 @@ export async function generateMetadata({
         };
     }
     
+    const detail = getProductDetail(slug) || {
+        slug,
+        description: '',
+        specifications: [],
+        benefits: [],
+        images: [],
+    };
+    
+    const productName = product.name;
+    const productDescription = detail.description || `Discover ${productName} - high-quality nasal care product from Nanocare. Detailed information, specifications and benefits.`;
+    
     return {
-        title: `${product.name.split('\n')[0]} | Nanocare`,
-        description: `Discover ${product.name.split('\n')[0]} - high-quality nasal care product from Nanocare. Detailed information, specifications and benefits.`,
-        keywords: ['nasal care product', 'nanocare', 'nasal rinse', 'nasal health'],
+        title: `${productName} | Nanocare`,
+        description: productDescription,
+        keywords: ['nasal care product', 'nanocare', product.category.toLowerCase(), 'nasal rinse', 'nasal health'],
         openGraph: {
-            title: `${product.name.split('\n')[0]} | Nanocare`,
-            description: `Discover ${product.name.split('\n')[0]} from Nanocare`,
-            images: [product.image],
+            title: `${productName} | Nanocare`,
+            description: productDescription,
+            images: detail.images && detail.images.length > 0 ? detail.images : [product.image],
             type: 'website',
+            url: `/products/${slug}`,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${productName} | Nanocare`,
+            description: productDescription,
+            images: detail.images && detail.images.length > 0 ? [detail.images[0]] : [product.image],
         },
         alternates: {
             canonical: `/products/${slug}`,

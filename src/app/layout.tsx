@@ -1,11 +1,11 @@
-import { Hind } from "next/font/google";
+import { Poppins } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
-const hindFont = Hind({
+const poppinsFont = Poppins({
     subsets: ["latin"],
     weight: ["300", "400", "500", "600", "700"],
-    variable: "--font-hind",
+    variable: "--font-poppins",
     display: "swap",
 });
 
@@ -89,7 +89,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${hindFont.variable} bg-white text-base`}>
+            <body className={`${poppinsFont.variable} bg-white text-base`}>
                 <Header />
                 {children}
             </body>

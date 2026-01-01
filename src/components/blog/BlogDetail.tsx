@@ -23,7 +23,7 @@ const BlogDetail = ({ post, detail }: BlogDetailProps) => {
     const contentParagraphs = detail.content.split('\n\n').filter(p => p.trim());
 
     return (
-        <main className="min-h-screen font-[var(--font-hind)] bg-white">
+        <main className="min-h-screen font-[var(--font-poppins)] bg-white">
             <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
                 {/* Breadcrumb */}
                 <nav className="mb-6 text-sm text-gray-600">
@@ -39,7 +39,12 @@ const BlogDetail = ({ post, detail }: BlogDetailProps) => {
                 </nav>
 
                 {/* Featured Image */}
-                <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-cover bg-center rounded-lg mb-8" style={{ backgroundImage: `url(${post.image})` }}></div>
+                <div 
+                    className="w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-cover bg-center rounded-lg mb-8" 
+                    style={{ backgroundImage: `url(${post.image})` }}
+                    role="img"
+                    aria-label={`${post.title} featured image`}
+                ></div>
 
                 {/* Article Header */}
                 <header className="mb-8">

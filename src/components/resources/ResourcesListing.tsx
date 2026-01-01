@@ -32,7 +32,7 @@ const ResourcesListing = ({ data }: ResourcesListingProps) => {
     const directResources = resources.filter(r => r.type === 'direct');
 
     return (
-        <main className="min-h-screen font-[var(--font-hind)] bg-gradient-to-b from-gray-50 to-white">
+        <main className="min-h-screen font-[var(--font-poppins)] bg-gradient-to-b from-gray-50 to-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:py-16">
                 {/* Page Title */}
                 <h1 className="font-bold text-2xl sm:text-3xl lg:text-[36px] text-center mb-4 sm:mb-6 lg:mb-8">
@@ -72,6 +72,8 @@ const ResourcesListing = ({ data }: ResourcesListingProps) => {
                                         <div 
                                             className="w-full h-[220px] sm:h-[180px] lg:h-[200px] bg-cover bg-center rounded"
                                             style={{ backgroundImage: `url(${resource.image})` }}
+                                            role="img"
+                                            aria-label={`${resource.title} resource image`}
                                         ></div>
                                         {/* Badge indicating gated content */}
                                         <div className="absolute top-2 right-2 bg-[rgb(225,162,0)] text-white text-xs font-bold px-2 py-1 rounded">
@@ -117,6 +119,8 @@ const ResourcesListing = ({ data }: ResourcesListingProps) => {
                                         <div 
                                             className="w-full h-[220px] sm:h-[180px] lg:h-[200px] bg-cover bg-center rounded"
                                             style={{ backgroundImage: `url(${resource.image})` }}
+                                            role="img"
+                                            aria-label={`${resource.title} resource image`}
                                         ></div>
                                         {/* Badge indicating direct download */}
                                         <div className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
